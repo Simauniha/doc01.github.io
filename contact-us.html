@@ -1105,24 +1105,23 @@
                                                             <p role="status" aria-live="polite" aria-atomic="true"></p>
                                                             <ul></ul>
                                                         </div>
-                                                        <form action="" method="post" >
-                                                            
-                                                            <p><label> Your name<br />
-<span class="wpcf7-form-control-wrap" data-name="name"><input size="40" maxlength="400"  type="text" name="name" required/></span> </label>
-                                                            </p>
-                                                            <p><label> Your email<br />
-<span class="wpcf7-form-control-wrap" data-name="email"><input size="40" maxlength="400"  type="email" name="email" required/></span> </label>
-                                                            </p>
-                                                            <p><label> Your Number<br />
-<span class="wpcf7-form-control-wrap" data-name="tel-776"><input size="40" maxlength="400"  type="tel" name="tel" required/></span> </label>
-                                                            </p>
-                                                            <p><label> Your message (optional)<br />
-<span class="wpcf7-form-control-wrap" data-name="message"><textarea cols="40" rows="10" maxlength="2000"  name="message"></textarea></span> </label>
-                                                            </p>
-                                                            <p><input  type="submit" value="Submit"  style="background-color: #e31c79;" />
-                                                            </p>
-                                                            
-                                                        </form>
+                                                        <form action="https://api.web3forms.com/submit" method="POST">
+                                                           
+                                                            <input name="Name" type="text" placeholder="Name" required />
+                                                            <input name="email" type="email" placeholder="Email" required />
+                                                            <input
+                                                              name="phone"
+                                                              type="text"
+                                                              placeholder="Phone Number"
+                                                              required
+                                                            />
+                                            
+                                                            <textarea
+                                                              name="about them"
+                                                              placeholder="Tell us about yourself"
+                                                            ></textarea>
+                                                            <button type="submit" style="background-color: #e31c79;">Submit</button>
+                                                          </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1362,20 +1361,20 @@
             e.preventDefault(); // Prevent the default form submission
     
             // Get form values
-            const name = document.querySelector('input[name="name"]').value;
+            const name = document.querySelector('input[name="Name"]').value;
             const email = document.querySelector('input[name="email"]').value;
-            const phone = document.querySelector('input[name="tel-776"]').value;
-            const message = document.querySelector('textarea[name="message"]').value;
+            const phone = document.querySelector('input[name="phone"]').value;
+            const about = document.querySelector('textarea[name="about them"]').value;
     
             // Construct the WhatsApp message
-            const whatsappMessage = `Hello, I would like to share my details:
+            const message = `Hello, I would like to share my details:
     Name: ${name}
     Email: ${email}
     Phone: ${phone}
-    Message: ${message}`;
+    About Me: ${about}`;
     
             // Encode the message for the WhatsApp URL
-            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const encodedMessage = encodeURIComponent(message);
     
             // Redirect to WhatsApp
             const whatsappUrl = `https://wa.me/918090900539?text=${encodedMessage}`;
