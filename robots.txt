@@ -1,0 +1,8 @@
+
+User-agent: *
+Disallow: \hospital1\images
+Disallow: \hospital1\.git
+Disallow: \hospital1\404.html
+Disallow: \hospital1\about.html
+Disallow: \hospital1\contact.html
+
